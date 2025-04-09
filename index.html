@@ -145,32 +145,33 @@
     }
     
     .mobile-menu {
-      display: none;
-      position: fixed;
-      top: 70px;
-      left: 0;
-      right: 0;
-      background-color: white;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 1rem 0;
-      z-index: 999;
-      transition: transform 0.3s ease;
-      transform: translateY(-100%);
-    }
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0; /* No padding on the container */
+  padding-top: 15px;
+  z-index: 999;
+  transition: transform 0.3s ease;
+  transform: translateY(-100%);
+}
     
     .mobile-menu.active {
       transform: translateY(0);
     }
     
     .mobile-menu-link {
-      display: block;
-      padding: 0.8rem 1.5rem;
-      color: var(--color-text);
-      text-decoration: none;
-      font-weight: 500;
-      border-bottom: 1px solid var(--color-border);
-      transition: background-color 0.2s ease;
-    }
+  display: block;
+  padding: 0.8rem 1.5rem;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s ease;
+}
     
     .mobile-menu-link:hover {
       background-color: var(--color-card);
@@ -229,6 +230,67 @@
       border: 1px solid var(--color-border);
     }
     
+    /* Skills Section */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .skills-column {
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    .skills-category {
+      margin-bottom: 2rem;
+    }
+    
+    .skills-category h3 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    
+    .skill-item {
+      margin-bottom: 1rem;
+    }
+    
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    .skill-bar {
+      height: 8px;
+      background-color: #e0e0e0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .skill-progress {
+      height: 100%;
+      background-color: var(--color-accent);
+      border-radius: 4px;
+    }
+    
+    .skill-tag {
+      display: inline-block;
+      background-color: var(--color-card);
+      padding: 0.5rem 1rem;
+      margin: 0.25rem;
+      border-radius: 20px;
+      border: 1px solid var(--color-border);
+      font-size: 0.9rem;
+      transition: transform 0.2s ease;
+    }
+    
+    .skill-tag:hover {
+      transform: translateY(-2px);
+    }
+    
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -270,6 +332,37 @@
       font-size: 0.9rem;
       color: var(--color-text-light);
       margin-bottom: 1rem;
+    }
+    
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+    }
+    
+    .project-tech {
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+    }
+    
+    .project-tech-title {
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    
+    .project-tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .tech-item {
+      font-size: 0.8rem;
+      padding: 0.15rem 0.5rem;
+      background-color: rgba(0,0,0,0.05);
+      border-radius: 4px;
     }
     
     .project-tags {
@@ -373,6 +466,10 @@
       .projects-grid {
         grid-template-columns: 1fr;
       }
+      
+      .skills-column {
+        flex: 100%;
+      }
     }
 
     /* Notion-like UI elements */
@@ -436,6 +533,7 @@
       
       <div class="navbar-links">
         <a href="#about" class="navbar-link">About</a>
+        <a href="#skills" class="navbar-link">Skills</a>
         <a href="#mission" class="navbar-link">Mission</a>
         <a href="#projects" class="navbar-link">Projects</a>
         <a href="#contact" class="navbar-link">Contact</a>
@@ -450,6 +548,7 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu">
     <a href="#about" class="mobile-menu-link">About</a>
+    <a href="#skills" class="mobile-menu-link">Skills</a>
     <a href="#mission" class="mobile-menu-link">Mission</a>
     <a href="#projects" class="mobile-menu-link">Projects</a>
     <a href="#contact" class="mobile-menu-link">Contact</a>
@@ -469,9 +568,158 @@
       <h2>About</h2>
       <div class="about-container">
         <div class="about-text">
-          <p>I'm Alcinder Lewis, a multidisciplinary professional with expertise spanning software engineering, data science, and theoretical research. With a strong foundation in both technical implementation and conceptual design, I create solutions that bridge theory and practical application.</p>
-          <p>My work is characterized by a methodical approach to complex problems, with particular attention to scalability and future adaptability.</p>
+          <p>I'm Alcinder Lewis, a versatile software engineer, educator, and problem solver with a passion for creating innovative solutions that bridge the gap between technology and real-world application. With expertise spanning full-stack development, data science, and academic research, I strive to develop scalable systems that empower users and organizations to achieve their full potential.</p>
+          <p>My approach is rooted in clarity, precision, and adaptability, ensuring that each project is not only effective today but also adaptable to tomorrow's challenges. Whether developing cutting-edge software, guiding students, or collaborating with teams, I am committed to creating solutions that push boundaries and make a tangible impact.</p>
         </div>
+      </div>
+    </section>    
+
+    <div class="notion-divider"></div>
+
+    <section id="skills">
+      <h2>Skills & Expertise</h2>
+      <div class="skills-container">
+        <div class="skills-column">
+          <div class="skills-category">
+            <h3>Software Engineering</h3>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Full-Stack Development</span>
+                <span>Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>API Design & Development</span>
+                <span>Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Database Management</span>
+                <span>Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 88%"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skills-category">
+            <h3>Data Science</h3>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Machine Learning</span>
+                <span>Intermediate</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Data Analysis & Visualization</span>
+                <span>Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skills-column">
+          <div class="skills-category">
+            <h3>Web & Mobile Development</h3>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>React & React Native</span>
+                <span>Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>MERN & FARM Stacks</span>
+                <span>Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 88%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Responsive Design</span>
+                <span>Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 82%"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skills-category">
+            <h3>Education & Communication</h3>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Technical Instruction</span>
+                <span>Expert</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Public Speaking</span>
+                <span>Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">
+                <span>Curriculum Development</span>
+                <span>Advanced</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <h3 style="margin-top: 2rem;">Technologies</h3>
+      <div style="margin-top: 1rem;">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">JavaScript/TypeScript</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Django</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">NoSQL</span>
+        <span class="skill-tag">TensorFlow</span>
+        <span class="skill-tag">Keras</span>
+        <span class="skill-tag">C/C++</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">Haskell</span>
+        <span class="skill-tag">HTML/CSS</span>
+        <span class="skill-tag">React Native</span>
+        <span class="skill-tag">Expo</span>
+        <span class="skill-tag">Cypress</span>
+        <span class="skill-tag">Selenium</span>
+        <span class="skill-tag">Scikit-learn</span>
       </div>
     </section>
 
@@ -486,78 +734,82 @@
     <section id="projects">
       <h2>Projects</h2>
       <div class="projects-grid">
+    
         <div class="project-card">
-          <img src="/api/placeholder/400/320" alt="Project Image" class="project-image" />
+          <img src="https://images.pexels.com/photos/6869016/pexels-photo-6869016.jpeg?auto=format&fit=crop&w=800&q=80" alt="Small Bites Grader System" class="project-image" />
           <div class="project-content">
-            <h3 class="project-title">Distributed Learning Framework</h3>
-            <p class="project-description">A scalable framework for distributed machine learning applications, optimized for heterogeneous computing environments.</p>
+            <h3 class="project-title">Small Bites Grader System</h3>
+            <p class="project-description">An AI-powered grading system that reduced competition processing time by 62.5% and staff requirements from 5 to 1 through automated data processing.</p>
             <div class="project-tags">
-              <span class="tag tag-data">Data Science</span>
-              <span class="tag tag-software">Software Engineering</span>
+              <span class="tag tag-data">AI Integration</span>
+              <span class="tag tag-software">Python</span>
             </div>
           </div>
         </div>
-        
+    
         <div class="project-card">
-          <img src="/api/placeholder/400/320" alt="Project Image" class="project-image" />
+          <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=800&q=80" alt="Professor Profile Creator" class="project-image" />
           <div class="project-content">
-            <h3 class="project-title">Educational Content Platform</h3>
-            <p class="project-description">Interactive learning platform with adaptive content delivery based on student performance analytics.</p>
+            <h3 class="project-title">Professor Profile Creator (PPC)</h3>
+            <p class="project-description">A web app that helps professors create professional, branded websites with zero coding required. Choose a template, fill out a form, get a ready-to-use static website.</p>
             <div class="project-tags">
               <span class="tag tag-education">Education</span>
               <span class="tag tag-web">Web Development</span>
             </div>
           </div>
         </div>
-        
+    
         <div class="project-card">
-          <img src="/api/placeholder/400/320" alt="Project Image" class="project-image" />
+          <img src="https://images.pexels.com/photos/3958406/pexels-photo-3958406.jpeg?auto=&w=800&q=80" alt="Momentum App" class="project-image" />
           <div class="project-content">
-            <h3 class="project-title">Automated CI/CD Pipeline</h3>
-            <p class="project-description">Custom-built continuous integration and deployment solution for microservices architecture.</p>
-            <div class="project-tags">
-              <span class="tag tag-devops">DevOps</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="project-card">
-          <img src="/api/placeholder/400/320" alt="Project Image" class="project-image" />
-          <div class="project-content">
-            <h3 class="project-title">Quantum Computing Simulator</h3>
-            <p class="project-description">Theoretical model implementation for simulating quantum computing algorithms on classical hardware.</p>
-            <div class="project-tags">
-              <span class="tag tag-research">Theoretical Research</span>
-              <span class="tag tag-software">Software Engineering</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="project-card">
-          <img src="/api/placeholder/400/320" alt="Project Image" class="project-image" />
-          <div class="project-content">
-            <h3 class="project-title">Mobile Health Tracker</h3>
-            <p class="project-description">Cross-platform application for health metrics tracking with data visualization and analysis tools.</p>
+            <h3 class="project-title">Momentum - Wellness App</h3>
+            <p class="project-description">A mental wellness mobile application using React Native and Expo, featuring meditation timer and ephemeral journaling system for stress management during COVID-19.</p>
             <div class="project-tags">
               <span class="tag tag-mobile">Mobile Application</span>
-              <span class="tag tag-data">Data Science</span>
+              <span class="tag tag-web">React Native</span>
             </div>
           </div>
         </div>
-        
+    
         <div class="project-card">
-          <img src="/api/placeholder/400/320" alt="Project Image" class="project-image" />
+          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80" alt="RealEstate360" class="project-image" />
           <div class="project-content">
-            <h3 class="project-title">Research Publication Platform</h3>
-            <p class="project-description">Web-based platform for publishing and reviewing academic research with integrated citation tools.</p>
+            <h3 class="project-title">RealEstate360</h3>
+            <p class="project-description">A comprehensive real estate price prediction system using multiple machine learning models to estimate property prices based on various factors.</p>
             <div class="project-tags">
-              <span class="tag tag-web">Web Development</span>
-              <span class="tag tag-education">Education</span>
+              <span class="tag tag-data">Data Science</span>
+              <span class="tag tag-software">Machine Learning</span>
             </div>
           </div>
         </div>
+    
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=800&q=80" alt="ALA Programming Language" class="project-image" />
+          <div class="project-content">
+            <h3 class="project-title">ALA Programming Language</h3>
+            <p class="project-description">An environment protocol language that produces a file system environment based on specifications from an end user, streamlining development environment setup.</p>
+            <div class="project-tags">
+              <span class="tag tag-software">Programming Language</span>
+              <span class="tag tag-devops">Developer Tools</span>
+            </div>
+          </div>
+        </div>
+    
+        <div class="project-card">
+          <img src="https://images.pexels.com/photos/7988761/pexels-photo-7988761.jpeg?auto=format&fit=crop&w=800&q=80" alt="Agilechan" class="project-image" />
+          <div class="project-content">
+            <h3 class="project-title">Agilechan</h3>
+            <p class="project-description">A virtual assistant that helps you follow agile practices, supporting Scrum, XP, and Kanban methodologies from your terminal.</p>
+            <div class="project-tags">
+              <span class="tag tag-software">Developer Tool</span>
+              <span class="tag tag-devops">Agile Development</span>
+            </div>
+          </div>
+        </div>
+    
       </div>
     </section>
+    
 
     <div class="notion-divider"></div>
 
